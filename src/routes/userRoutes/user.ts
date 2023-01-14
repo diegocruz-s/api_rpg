@@ -1,9 +1,10 @@
 import { Router } from 'express'
-import Test from '../../controllers/userController/test'
+
+import createUser from '../../controllers/userController/createUser'
 
 const routes = Router()
 
-routes.get('/', Test.index)
+routes.post('/', createUser.index)
 
 export {
     routes 
