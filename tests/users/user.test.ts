@@ -5,7 +5,6 @@
 import request from 'supertest'
 import app from "../../src/app";
 import { UserFactory } from '../factories/factories';
-import { Error } from '../../src/interfaces/Error';
 
 describe('User', () => {
 

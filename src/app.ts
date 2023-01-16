@@ -1,6 +1,8 @@
 import cors from 'cors'
 import express, { Express } from 'express'
+
 import { routes } from './routes/routes'
+
 import 'dotenv/config'
 
 class AppController {
@@ -14,6 +16,7 @@ class AppController {
 
     middlewares() {
         this.app.use(express.json())
+        this.app.use(express.urlencoded({ extended: true }))
         this.app.use(cors())
     }
 
@@ -24,6 +27,3 @@ class AppController {
 }
 
 export default new AppController().app
-
-// "pretest": "SET NODE_ENV=test npx prisma migrate dev",
-// "posttest": "SET NODE_ENV=test npx prisma migrate diff "
