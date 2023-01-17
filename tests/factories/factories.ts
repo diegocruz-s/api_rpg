@@ -1,5 +1,6 @@
 import { IUser } from '../../src/interfaces/User'
 import { faker } from '@faker-js/faker'
+import { randomUUID } from 'crypto'
 
 interface IUserFactory {
     name?: string

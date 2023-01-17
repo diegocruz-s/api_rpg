@@ -1,9 +1,5 @@
-import { User } from '@prisma/client'
-import { PrismaClientInitializationError, PrismaClientKnownRequestError, PrismaClientRustPanicError, PrismaClientUnknownRequestError, PrismaClientValidationError } from '@prisma/client/runtime'
 import { hashSync } from 'bcryptjs'
 import { Request, Response } from 'express'
-import { IssueData } from 'zod'
-
 import { prisma } from '../../database/prisma/db'
 import { Error } from '../../interfaces/Error'
 import { userSchema } from '../../validators/users/createUser'
@@ -90,9 +86,6 @@ class CreateUser {
                 
     }
 
-    public abc (req: Request, res: Response){
-        return res.send({ message: 'HW!' })
-    }
 }
 
 export default new CreateUser()
