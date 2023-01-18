@@ -1,4 +1,3 @@
-import { User } from '@prisma/client'
 import { z } from "zod";
 
 // const regexName = /[A-Z][a-z]* [A-Z][a-z]*/

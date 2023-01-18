@@ -4,15 +4,20 @@ import fs from 'fs'
 import { UserFactory } from "../factories/factories"
 import request from 'supertest'
 import app from "../../src/app"
+import { prisma } from '../../src/database/prisma/db';
 
 describe('User', () => {
+    beforeEach(async () => {
+        await prisma.$executeRawUnsafe(`TRUNCATE TABLE user`)
+    })
+
     // Create user
     it('should create a user', async () => {
         const user = {
-            email: 'alex123@gmail.com',
+            email: 'diego@gmail.com',
             name: 'Diego Cruz',
             password: 'Diego@123456',
-            username: 'asc123__00',
+            username: 'dsc__00',
         }
         const response = await request(app).post('/users').send(user)
 

@@ -81,7 +81,7 @@ class CreateUser {
                     status: 422
                 }
             }
-            return res.json({ error })
+            return res.status(+error.status).json({ error })
         }
                 
     }
